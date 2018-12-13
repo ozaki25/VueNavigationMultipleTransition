@@ -15,6 +15,18 @@ const AppNavigation = StackNavigator(
     initialRouteName: "Sample1"
   }
 );
+
+const original = AppNavigation.router.getStateForAction;
+
+AppNavigation.router.getStateForAction = (action, state) => {
+  if (state && action.routeName === state.routes[state.index].routeName) {
+    console.log("二重遷移抑止", { state, action });
+    return null;
+  }
+  console.log("二重遷移じゃないのでOK", { state, action });
+  return original(action, state);
+};
+
 export default {
   components: { AppNavigation }
 };
