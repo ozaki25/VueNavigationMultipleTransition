@@ -15,18 +15,3 @@
   color: blue;
 }
 </style>
-
-<script>
-export default {
-  props: {
-    navigation: {
-      type: Object
-    }
-  },
-  methods: {
-    onPress: function() {
-      this.navigation.navigate("Sample1");
-    }
-  }
-};
-</script>
