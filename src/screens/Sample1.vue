@@ -25,6 +25,9 @@ export default {
   },
   methods: {
     onPress: function() {
+      // 連打を再現
+      this.navigation.navigate("Sample2");
+      this.navigation.navigate("Sample2");
       this.navigation.navigate("Sample2");
     }
   }
